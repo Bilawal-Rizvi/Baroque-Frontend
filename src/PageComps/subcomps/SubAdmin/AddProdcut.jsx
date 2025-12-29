@@ -165,7 +165,7 @@ function AddProduct() {
                         className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden shadow-md group"
                       >
                         <img
-                          src={URL.createObjectURL(file)}
+                          src={URL.file}
                           alt={`Product ${index + 1}`}
                           className="w-full h-full object-cover"
                         />
