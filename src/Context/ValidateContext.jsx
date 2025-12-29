@@ -6,7 +6,6 @@ import {
   useState,
 } from "react";
 import axios from "axios";
-import { useAuth } from "./Authcontext";
 const ValidateContext = createContext();
 export const ValidateProvider = ({ children }) => {
 const BASE_URL = import.meta.env.VITE_BASE_URL;
