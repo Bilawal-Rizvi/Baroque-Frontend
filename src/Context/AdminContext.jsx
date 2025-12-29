@@ -125,8 +125,10 @@ export const AdminProvider = ({ children }) => {
         }
       );
       // console.log(res.data);
+      return true;  
     } catch (err) {
       console.log(err.response?.data?.message);
+      return false
     }
   }, []);
 

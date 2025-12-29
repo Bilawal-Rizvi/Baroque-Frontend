@@ -17,7 +17,7 @@ function Item(props) {
             <h1>{props.Title}</h1>
             <span className="text-gray-500"> UNSTITCHED / DEFAULT</span>
         </div>
-        <h1  className="text-center mt-3 mb-5">Rs {total}</h1>
+        <h1  className="text-center mt-3 mb-5">Rs {total.toLocaleString()}</h1>
       </div>
     </>
   );

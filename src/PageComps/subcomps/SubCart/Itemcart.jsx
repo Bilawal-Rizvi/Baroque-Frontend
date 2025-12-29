@@ -38,7 +38,7 @@ function Itemcart(props) {
           <div className="flex flex-col gap-1">
             <span className="text-xs text-gray-600 font-light uppercase">UNSTITCHED</span>
             <h2 className="font-light text-sm lg:text-base line-clamp-2">{props.title}</h2>
-            <h3 className="font-bold text-sm lg:text-base">PKR {props.price}</h3>
+            <h3 className="font-bold text-sm lg:text-base">PKR {props.price.toLocaleString()}</h3>
             <p className="text-xs text-gray-600 font-light">UNSTITCHED / DEFAULT</p>
           </div>
         </div>
