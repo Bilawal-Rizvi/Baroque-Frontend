@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 function AllProducts() {
   const { GetProducts, DelProducts } = useAdmin();
   const [AllProducts, setAllProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   const HandleDelClick = useCallback(async (id) => {
@@ -19,13 +20,29 @@ function AllProducts() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const Products = await GetProducts();
-      setAllProducts(Products);
-    };
+         try {
+      setLoading(true);
+      const products = await GetProducts();
+      setAllProducts(products);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
     fetchProducts();
   }, [GetProducts]);
-
+ if (loading) {
+    return (
+      <div className="flex justify-center items-center py-12">
+        <div className="text-center">
+          <i className="fa-solid fa-spinner fa-spin text-3xl text-gray-400 mb-3"></i>
+          <p className="text-gray-600">Loading Products...</p>
+        </div>
+      </div>
+    );
+  }
   if (AllProducts.length < 1) {
     return (
       <div className="min-h-screen bg-gray-50 p-4 sm:p-6">
@@ -41,7 +58,7 @@ function AllProducts() {
       </div>
     );
   }
-
+ 
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-4 sm:space-y-6">

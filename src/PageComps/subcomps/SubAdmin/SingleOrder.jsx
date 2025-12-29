@@ -7,15 +7,25 @@ function SingleOrder() {
   const {state:item} = useLocation();
   const [order,setOrder] = useState(null);
   const {UpdateStatus,SingleOrder} = useAdmin();
+  const [loading,setLoading] = useState(true);
   const navigate = useNavigate();
   
-  useEffect(()=>{
-    const fetchOrder = async()=>{
+
+useEffect(() => {
+  const fetchOrder = async () => {
+    try {
+      setLoading(true); // start loading
       const data = await SingleOrder(item);
       setOrder(data);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false); // stop loading
     }
-    fetchOrder();
-  },[]);
+  };
+
+  fetchOrder();
+}, [item]);
 
   const HandleClick = async () => {
     if (order.status === "Completed") {
@@ -29,7 +39,16 @@ function SingleOrder() {
       window.location.assign("/admin/singleorder");
     }
   };
-
+ if (loading) {
+    return (
+      <div className="flex justify-center items-center py-12">
+        <div className="text-center">
+          <i className="fa-solid fa-spinner fa-spin text-3xl text-gray-400 mb-3"></i>
+          <p className="text-gray-600">Loading Order...</p>
+        </div>
+      </div>
+    );
+  }
   if (!order) {
     return (
       <div className="p-4 sm:p-6">

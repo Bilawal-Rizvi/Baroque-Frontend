@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useCallback } from "react";
+import { useAuth } from "./Authcontext";
 
 const AdminContext = createContext();
 
@@ -8,7 +9,7 @@ export const AdminProvider = ({ children }) => {
   const BASE_URL = import.meta.env.VITE_BASE_URL;
 
   const token = localStorage.getItem("accessToken");
-  const user = localStorage.getItem("user");
+ const {user} = useAuth()
   const [Data, setData] = useState({
     PendingOrder: 0,
     CompletedOrder: 0,
@@ -153,15 +154,23 @@ export const AdminProvider = ({ children }) => {
      return err.response?.data?.message;
     }
   };
-  useEffect(() => {
-    const fetchOrders = async () => {
-      await GetOrders();
+ useEffect(() => {
+  if (!user || user.role !== "admin") return; // non-admin ko skip
+
+  const fetchOrders = async () => {
+    try {
+      setLoading(true);
+      const orders = await GetOrders();
+      setOrders(orders);
+    } catch (err) {
+      console.error(err);
+    } finally {
       setLoading(false);
-    };
+    }
+  };
 
-    fetchOrders();
-
-  }, [GetOrders, setLoading]);
+  fetchOrders();
+}, [user]);
   useEffect(() => {
     if (token) {
       GetData();
