@@ -13,10 +13,10 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
   // ---------- LOGIN FUNCTION ----------
   const login = async (email, password) => {
     try {
-      const res = await axios.post(`https://baroque-backend-production.up.railway.app/login/mainlogin`, {
+      const res = await axios.post(`${BASE_URL}/login/mainlogin`, {
         email,
         password,
-      });
+      },{ withCredentials: true });
       console.log("Login response:", res.data);
 
       const { accessToken, user } = res.data;

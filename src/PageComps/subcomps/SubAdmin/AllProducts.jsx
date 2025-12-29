@@ -13,7 +13,7 @@ function AllProducts() {
   const HandleDelClick = useCallback(async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       await DelProducts(id);
-      window.location.assign("/admin/AllProducts");
+        setAllProducts(prev => prev.filter(p => p._id !== id));
     }
   }, [DelProducts]);
 
