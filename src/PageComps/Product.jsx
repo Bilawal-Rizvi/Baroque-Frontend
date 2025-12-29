@@ -2,7 +2,6 @@ import React, { use, useState, useEffect, useMemo } from "react";
 import Details from "./subcomps/SubProduct/Details";
 import Smallcol from "./subcomps/SubProduct/Smallcol";
 import Largecol from "./subcomps/SubProduct/Largecol";
-import Endstit from "./subcomps/SubProduct/Endstit";
 import { useNavigate, useParams } from "react-router-dom";
 import { useImages } from "../Context/ImageCOntext";
 import axios from "axios";
@@ -77,15 +76,6 @@ function Product({setonimg }) {
         </div>
       </div>
 
-      {/* Related Products Section */}
-      <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl text-center font-semibold mb-6 sm:mb-8 lg:mb-10 uppercase tracking-wide">
-          RELATED PRODUCTS
-        </h1>
-        <div className="max-w-screen-2xl mx-auto">
-          <Endstit botimg={product} />
-        </div>
-      </div>
     </>
   );
 }
