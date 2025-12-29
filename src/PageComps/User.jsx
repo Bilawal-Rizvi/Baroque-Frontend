@@ -3,7 +3,7 @@ import Header from './subcomps/User/Header'
 import { useAuth } from '../Context/Authcontext'
 import { replace, useNavigate } from 'react-router-dom';
 import { TokenVerifier } from '../Context/ValidateContext';
-import UserCart from './subcomps/User/userCart';
+import UserCart from './subcomps/User/UserCart';
 function User() {
     const navigate = useNavigate();
         const {logout,user,loading} = useAuth();
