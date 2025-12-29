@@ -24,17 +24,17 @@ function AddProduct() {
 
   const HandleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!Title.trim()) {
       alert("Please enter product title");
       return;
     }
-    
+
     if (!Price.trim() || isNaN(Price)) {
       alert("Please enter valid price");
       return;
     }
-    
+
     if (images.length === 0) {
       alert("Please upload at least one image");
       return;
@@ -116,7 +116,8 @@ function AddProduct() {
                 Product Images <span className="text-red-500">*</span>
               </label>
               <p className="text-sm text-gray-600 mb-4">
-                Upload multiple images of your product (recommended: at least 3 images)
+                Upload multiple images of your product (recommended: at least 3
+                images)
               </p>
 
               <div className="space-y-4">
@@ -151,7 +152,9 @@ function AddProduct() {
                   </label>
                   <p className="text-xs text-gray-500 mt-2">
                     {images.length > 0
-                      ? `${images.length} image${images.length > 1 ? "s" : ""} selected`
+                      ? `${images.length} image${
+                          images.length > 1 ? "s" : ""
+                        } selected`
                       : "No images selected"}
                   </p>
                 </div>
@@ -162,14 +165,14 @@ function AddProduct() {
                     {images.map((file, index) => (
                       <div
                         key={index}
-                        className="relative aspect-square bg-gray-100 rounded-lg overflow-hidden shadow-md group"
+                        className="relative aspect-square rounded-lg overflow-hidden shadow-md group bg-transparent"
                       >
                         <img
-                          src={URL.file}
+                          src={URL.createObjectURL(file)}
                           alt={`Product ${index + 1}`}
                           className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-200 flex items-center justify-center">
+                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-200 flex items-center justify-center">
                           <button
                             type="button"
                             onClick={() => removeFile(index)}
@@ -202,7 +205,12 @@ function AddProduct() {
               </button>
               <button
                 type="submit"
-                disabled={loading || !Title.trim() || !Price.trim() || images.length === 0}
+                disabled={
+                  loading ||
+                  !Title.trim() ||
+                  !Price.trim() ||
+                  images.length === 0
+                }
                 className="w-full sm:w-auto sm:flex-1 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow-md transition-all duration-200 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-green-500 disabled:hover:shadow-md"
               >
                 {loading ? (
