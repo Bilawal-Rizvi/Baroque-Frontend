@@ -1,5 +1,4 @@
 import React from "react";
-import "/src/Index.css";
 import { useNavigate } from "react-router-dom";
 function TriImg(props) {
   const navigate = useNavigate();
