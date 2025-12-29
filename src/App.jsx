@@ -5,7 +5,7 @@ import "./App.css";
 
 import Nav from "./PageComps/Nav.jsx";
 import Home from "./PageComps/Home.jsx";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Stitched from "./PageComps/Stitched.jsx";
 import Marque from "./PageComps/Marque.jsx";
 import Footer from "./PageComps/Footer.jsx";
