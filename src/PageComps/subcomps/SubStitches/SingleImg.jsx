@@ -31,7 +31,7 @@ return (
           {image.Title}
         </p>
         <h1 className="text-base sm:text-lg md:text-xl font-bold text-black mb-1">
-          PKR {image.Price}
+          PKR {image.Price.toLocalString()}
         </h1>
         <span className="text-xs sm:text-sm text-gray-600 uppercase tracking-wide">
           VELVET
