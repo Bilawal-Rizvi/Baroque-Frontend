@@ -9,19 +9,19 @@ function Itemcart(props) {
   const Addingproduct = useCallback(() => {
     setCount(prev => prev + 1);
     addProduct(props.id, 1);
-    window.location.assign("/cart");
+    window.location.reload();
   }, [props.id, addProduct]);
 
   const RemovingProduct = useCallback(() => {
     if (count <= 1) return;
     setCount(prev => prev - 1);
     RemoveProduct(props.id, count - 1);
-    window.location.assign("/cart");
+    window.location.reload();
   }, [count, props.id, RemoveProduct]);
 
   const Removingitem = useCallback(() => {
     Removeitem(props.id);
-    window.location.assign("/cart");
+    window.location.reload();
   }, [props.id, Removeitem]);
 
   return (
