@@ -30,7 +30,7 @@ function Header() {
             </button>
             
             <button
-              onClick={() => navigate("/products")}
+              onClick={() => navigate("/stitched")}
               className="px-3 sm:px-4 py-2 text-sm sm:text-base font-semibold text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200 active:scale-95"
             >
               Products
