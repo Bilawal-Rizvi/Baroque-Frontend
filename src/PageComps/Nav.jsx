@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../app.css";
+import "../App.css";
 import { useNavigate } from "react-router-dom";
 import { TokenVerifier } from "../Context/ValidateContext";
 import { useAuth } from "../Context/Authcontext";
