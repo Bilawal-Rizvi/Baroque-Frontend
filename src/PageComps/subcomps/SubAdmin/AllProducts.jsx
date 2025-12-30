@@ -146,7 +146,7 @@ function AllProducts() {
                         {p.Title}
                       </h3>
                       <p className="text-lg font-bold text-green-600 mb-3">
-                        PKR {p.Price}
+                        PKR {p.Price.toLocaleString()}
                       </p>
                       <div className="flex gap-2">
                         <button
@@ -184,7 +184,7 @@ function AllProducts() {
                       {p.Title}
                     </h3>
                     <p className="text-lg font-bold text-green-600">
-                      PKR {p.Price}
+                      PKR {p.Price.toLocaleString()}
                     </p>
                   </div>
                 </div>
