@@ -75,7 +75,7 @@ function UserCart() {
             Looks like you haven't added any items to your cart yet. Start shopping to fill it up!
           </p>
           <button
-            onClick={() => window.location.href = "/stitched"}
+            onClick={() => window.location.href = "/#/stitched"}
             className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-md transition-all duration-200 hover:shadow-lg"
           >
             Continue Shopping
