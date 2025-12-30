@@ -162,8 +162,6 @@ export const AdminProvider = ({ children }) => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const orders = await GetOrders();
-      setOrders(orders);
     } catch (err) {
       console.error(err);
     } finally {
