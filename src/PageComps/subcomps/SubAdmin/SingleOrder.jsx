@@ -85,7 +85,7 @@ useEffect(() => {
             </div>
             <div>
               <p className="text-sm text-gray-600">Total Amount</p>
-              <p className="font-semibold text-lg text-green-600">PKR {order.totalPrice}</p>
+              <p className="font-semibold text-lg text-green-600">PKR {order.totalPrice.toLocaleString()}</p>
             </div>
           </div>
           
