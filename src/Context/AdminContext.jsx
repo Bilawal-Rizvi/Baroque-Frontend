@@ -163,7 +163,7 @@ export const AdminProvider = ({ children }) => {
     try {
       setLoading(true);
       const orders = await GetOrders();
-      setOrder(orders);
+      setOrders(orders);
     } catch (err) {
       console.error(err);
     } finally {
