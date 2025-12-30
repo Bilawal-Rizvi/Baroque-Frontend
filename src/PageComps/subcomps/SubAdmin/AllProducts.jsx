@@ -107,7 +107,7 @@ function AllProducts() {
                     </span>
 
                     <span className="text-gray-700 font-semibold">
-                      PKR {p.Price}
+                      PKR {p.Price.toLocaleString()}
                     </span>
 
                     <div className="flex gap-2 justify-center">
