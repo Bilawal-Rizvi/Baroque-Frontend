@@ -36,7 +36,7 @@ useEffect(() => {
     const updatedOrder = await UpdateStatus(order._id);
     if (updatedOrder) {
       alert("Order marked as completed");
-      // window.location.reload();
+      window.location.reload();
     }
   };
  if (loading) {
