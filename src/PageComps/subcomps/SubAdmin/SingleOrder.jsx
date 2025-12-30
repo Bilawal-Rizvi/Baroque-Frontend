@@ -36,7 +36,7 @@ useEffect(() => {
     const updatedOrder = await UpdateStatus(order._id);
     if (updatedOrder) {
       alert("Order marked as completed");
-      window.location.reload();
+      // window.location.reload();
     }
   };
  if (loading) {
@@ -137,7 +137,7 @@ useEffect(() => {
                 className="grid grid-cols-4 items-center p-4 border-t text-sm hover:bg-gray-50 transition-colors"
               >
                 <img
-                  src={p.productId?.images?.[1]?.ImgUrl}
+                  src={p.productId?.images?.[0]?.ImgUrl}
                   alt={p.productId?.Title}
                   className="w-16 h-16 object-cover rounded border"
                 />
