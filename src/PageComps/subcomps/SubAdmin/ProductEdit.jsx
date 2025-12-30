@@ -7,7 +7,7 @@ function ProductEdit() {
   const navigate = useNavigate();
   const product = location.state;
   
-  const [images, setImages] = useState(product?.images || []);
+  const [images, setImages] = useState([]);
   const [Title, setTitle] = useState(product?.Title || "");
   const [Price, setPrice] = useState(product?.Price || "");
   const [loading, setLoading] = useState(false);
@@ -130,7 +130,6 @@ function ProductEdit() {
 
             {/* Current Images Section */}
             {product.images && product.images.length > 0 && (
-             
               <div className="border-t pt-6">
                 <label className="text-gray-800 font-semibold mb-3 block text-sm sm:text-base">
                   Current Product Images
