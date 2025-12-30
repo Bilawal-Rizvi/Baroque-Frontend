@@ -142,7 +142,7 @@ useEffect(() => {
                   className="w-16 h-16 object-cover rounded border"
                 />
                 <span className="font-medium text-gray-800">{p.productId?.Title}</span>
-                <p className="text-gray-700">PKR {p.productId?.Price?.toLocaleString()}</p>
+                <p className="text-gray-700">PKR {p.productId?.Price.toLocaleString()}</p>
                 <span className="font-semibold text-gray-800">{p.quantity}</span>
               </div>
             ))}
@@ -157,7 +157,7 @@ useEffect(() => {
               >
                 <div className="flex gap-4">
                   <img
-                    src={p.productId?.images?.[1]?.ImgUrl}
+                    src={p.productId?.images?.[0]?.ImgUrl}
                     alt={p.productId?.Title}
                     className="w-20 h-20 object-cover rounded border shrink-0"
                   />
