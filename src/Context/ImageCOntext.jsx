@@ -8,8 +8,6 @@ export const ImageProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const BASE_URL = import.meta.env.VITE_BASE_URL;
-console.log(BASE_URL)
-
 
   useEffect(() => {
     const fetchImages = async () => {
