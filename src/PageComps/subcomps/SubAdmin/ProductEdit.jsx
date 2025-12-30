@@ -7,7 +7,7 @@ function ProductEdit() {
   const navigate = useNavigate();
   const product = location.state;
   
-  const [images, setImages] = useState([product?.images || []]);
+  const [images, setImages] = useState(product?.images || []);
   const [Title, setTitle] = useState(product?.Title || "");
   const [Price, setPrice] = useState(product?.Price || "");
   const [loading, setLoading] = useState(false);
