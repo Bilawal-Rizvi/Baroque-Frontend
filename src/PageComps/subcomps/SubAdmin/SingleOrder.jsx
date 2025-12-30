@@ -142,7 +142,7 @@ useEffect(() => {
                   className="w-16 h-16 object-cover rounded border"
                 />
                 <span className="font-medium text-gray-800">{p.productId?.Title}</span>
-                <span className="text-gray-700">PKR {p.productId?.Price.toLocaleString()}</span>
+                <span className="text-gray-700">PKR {p.productId?.Price?.toLocaleString()}</span>
                 <span className="font-semibold text-gray-800">{p.quantity}</span>
               </div>
             ))}
@@ -167,7 +167,7 @@ useEffect(() => {
                     </h3>
                     <div className="flex justify-between items-center text-sm">
                       <span className="text-gray-600">Price:</span>
-                      <span className="font-semibold text-gray-800">PKR {p.productId?.Price.toLocaleString()}</span>
+                      <span className="font-semibold text-gray-800">PKR {p.productId?.Price?.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between items-center text-sm mt-1">
                       <span className="text-gray-600">Quantity:</span>
